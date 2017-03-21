@@ -6,7 +6,6 @@
 # useful targets:
 #   make sdist ---------------- produce a tarball
 #   make rpm  ----------------- produce RPMs
-#   make deb ------------------ produce a DEB
 #   make docs ----------------- rebuild the manpages (results are checked in)
 #   make tests ---------------- run the tests
 #   make pyflakes, make pep8 -- source code checks
@@ -104,9 +103,6 @@ clean:
 	rm -rf test/test_data
 	@echo "Cleaning up RPM building stuff"
 	rm -rf MANIFEST rpm-build
-	@echo "Cleaning up Debian building stuff"
-	rm -rf debian
-	rm -rf deb-build
 	rm -rf docs/json
 	rm -rf docs/js
 
@@ -152,14 +148,6 @@ rpm: rpmcommon
 	@echo "Ansible RPM is built:"
 	@echo "    rpm-build/$(RPMNVR).noarch.rpm"
 	@echo "#############################################"
-
-debian: sdist
-deb: debian
-	cp -r packaging/debian ./
-	chmod 755 debian/rules
-	fakeroot debian/rules clean
-	fakeroot dh_install
-	fakeroot debian/rules binary
 
 # for arch or gentoo, read instructions in the appropriate 'packaging' subdirectory directory
 
