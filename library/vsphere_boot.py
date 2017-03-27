@@ -143,4 +143,5 @@ def main():
 
 # this is magic, see lib/ansible/module_common.py
 #<<INCLUDE_ANSIBLE_MODULE_COMMON>>
-main()
+if __name__ == '__main__':
+    main()
