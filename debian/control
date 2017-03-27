@@ -2,12 +2,19 @@ Source: ansible-provisioning
 Section: admin
 Priority: optional
 Maintainer: Henry Graham (hzgraham) <Henry.Graham@mail.wvu.edu>
-Build-Depends: cdbs, debhelper (>= 5.0.0)
-Standards-Version: 3.9.1
-Homepage: http://ansible.cc/
+Build-Depends: 
+ debhelper (>= 9),
+ dh-python,
+Standards-Version: 3.9.8
+Homepage: https://github.com/ansible-provisioning/ansible-provisioning
 
 Package: ansible-provisioning
 Architecture: all
-Depends: python, ansible
-Description: Ansible Application
- Ansible is a extra-simple tool/API for doing 'parallel remote things' over SSH executing commands, running "modules", or executing larger 'playbooks' that can serve as a configuration management or deployment system.
+Depends: ansible
+Description: Ansible provisioning framework
+ Ansible is a extra-simple tool/API for doing 'parallel remote things' over SSH 
+ executing commands, running "modules", or executing larger 'playbooks' that 
+ can serve as a configuration management or deployment system.
+ .
+ Ansible provisioning framework - a set of modules, plugins, and documentation 
+ for provisioning with Ansible

@@ -1,6 +1,5 @@
-ansible-provisioning (0.8) unstable; urgency=low
-  
-  * 0.8 release pending
- 
- -- Dag Wieers <dag@wieers.com>  Mon, 15 Oct 2012 09:44:01 +0200
+ansible-provisioning (1.4.4-1) unstable; urgency=medium
 
+  * Initial Upload
+
+ -- Liang Guo <guoliang@debian.org>  Tue, 21 Mar 2017 10:35:07 +0800
