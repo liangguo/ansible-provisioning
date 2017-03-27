@@ -9,7 +9,7 @@ from ansible import __version__, __author__
 from distutils.core import setup
 
 # find library modules
-data_files = [ ('/usr/share/ansible', glob('./library/*')) ]
+data_files = [ ('/usr/lib/python2.7/dist-packages/ansible/modules/extras/ansible-provisioning', glob('./library/*')) ]
 
 print "DATA FILES=%s" % data_files
 
