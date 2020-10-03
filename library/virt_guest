@@ -64,7 +64,7 @@ import sys
 try:
     import libvirt
 except ImportError:
-    print "failed=True msg='libvirt python module unavailable'"
+    print("failed=True msg='libvirt python module unavailable'")
     sys.exit(1)
 
 from ansible.module_utils.basic import AnsibleModule
@@ -91,9 +91,8 @@ def main():
 
     try:
         conn = libvirt.open(connection)
-    except Exception, e:
-        module.fail_json(msg=str(e))
- 
+    except :
+        print("exception connect to libvirt")
     try:
         domain = conn.lookupByName(guest)
     except libvirt.libvirtError:
@@ -108,7 +107,7 @@ def main():
             if not module.check_mode:
                 with open(src, 'r') as f:
                     conn.defineXML(f.read())
-        except OSError, e:
+        except OSError:
             module.fail_json(msg=str(e))
         changed = True
         provisioning_status = 'unprovisioned'
